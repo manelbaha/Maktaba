@@ -23,12 +23,57 @@ class BookRepository {
      * )
      */
     private val booksList = listOf(
-        Book(isbn = "", title = "Clean Code", nbPages = 0),
-        Book(isbn = "", title = "The Pragmatic Programmer", nbPages = 0),
-        Book(isbn = "", title = "Design Patterns", nbPages = 0),
-        Book(isbn = "", title = "Refactoring", nbPages = 0),
-        Book(isbn = "", title = "Head First Design Patterns", nbPages = 0)
+    Book(
+        isbn = "978-0-13-235088-4",
+        title = "Clean Code",
+        nbPages = 464
+    ),
+    Book(
+        isbn = "978-0-201-61622-4",
+        title = "The Pragmatic Programmer",
+        nbPages = 352
+    ),
+    Book(
+        isbn = "978-0-13-468599-1",
+        title = "Effective Java",
+        nbPages = 416
+    ),
+    Book(
+        isbn = "978-0-596-52068-7",
+        title = "Head First Design Patterns",
+        nbPages = 694
+    ),
+    Book(
+        isbn = "978-1-491-94729-9",
+        title = "Kotlin in Action",
+        nbPages = 360
+    ),
+    Book(
+        isbn = "978-0-262-03384-8",
+        title = "Introduction to Algorithms",
+        nbPages = 1312
+    ),
+    Book(
+        isbn = "978-1-118-06333-0",
+        title = "Android Programming",
+        nbPages = 832
+    ),
+    Book(
+        isbn = "978-0-321-35668-0",
+        title = "Clean Architecture",
+        nbPages = 432
+    ),
+    Book(
+        isbn = "978-1-59327-584-6",
+        title = "Eloquent JavaScript",
+        nbPages = 472
+    ),
+    Book(
+        isbn = "978-0-13-449416-6",
+        title = "Database System Concepts",
+        nbPages = 1376
     )
+)
 
     /**
      * TODO for Students (TP1 - Exercise 2):
