@@ -69,6 +69,15 @@ fun BookList(
     books: List<Book>,
     modifier: Modifier = Modifier
 ) {
+
+Column {
+    
+    Text(text = "Total Books: ${books.size}")
+             
+    
+    }
+}
+    
     LazyColumn(
         modifier = modifier,
         contentPadding = PaddingValues(16.dp),
