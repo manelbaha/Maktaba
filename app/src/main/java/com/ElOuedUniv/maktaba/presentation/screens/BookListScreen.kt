@@ -14,9 +14,6 @@ import androidx.compose.ui.unit.dp
 import com.ElOuedUniv.maktaba.data.model.Book
 import com.ElOuedUniv.maktaba.presentation.viewmodel.BookViewModel
 
-/**
- * Main screen displaying the list of books
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BookListScreen(
@@ -49,40 +46,54 @@ fun BookListScreen(
                 if (books.isEmpty()) {
                     EmptyBooksMessage(
                         modifier = Modifier.align(Alignment.Center)
+
                     )
                 } else {
-                    BookList(
-                        books = books,
-                        modifier = Modifier.fillMaxSize()
+                    BookList (
+
+                            viewModel = viewModel,
+                            modifier = Modifier.fillMaxSize()
                     )
+
+
                 }
             }
         }
     }
 }
 
-/**
- * Composable for displaying a list of books
- */
+
+
 @Composable
 fun BookList(
-    books: List<Book>,
+    viewModel: BookViewModel,
     modifier: Modifier = Modifier
 ) {
-    LazyColumn(
-        modifier = modifier,
-        contentPadding = PaddingValues(16.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
-    ) {
+    val books by viewModel.books.collectAsState()
+
+    LazyColumn(modifier = modifier) {
+
+        item {
+            Text(
+                text = "Total Books: ${books.size}",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(8.dp)
+            )
+        }
+
+        item {
+            Text(
+                text = "Total Pages: ${viewModel.totalPages}",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(8.dp)
+            )
+        }
+
         items(books) { book ->
             BookItem(book = book)
         }
     }
 }
-
-/**
- * Composable for displaying a single book item
- */
 @Composable
 fun BookItem(book: Book) {
     Card(
@@ -99,9 +110,9 @@ fun BookItem(book: Book) {
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold
             )
-            
+
             Spacer(modifier = Modifier.height(8.dp))
-            
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -117,7 +128,7 @@ fun BookItem(book: Book) {
                         style = MaterialTheme.typography.bodyMedium
                     )
                 }
-                
+
                 Column(horizontalAlignment = Alignment.End) {
                     Text(
                         text = "Pages:",
@@ -134,9 +145,6 @@ fun BookItem(book: Book) {
     }
 }
 
-/**
- * Composable for displaying empty state message
- */
 @Composable
 fun EmptyBooksMessage(modifier: Modifier = Modifier) {
     Column(

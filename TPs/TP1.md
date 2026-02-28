@@ -130,9 +130,11 @@ You will see a list of 5 books with incomplete information:
 
 ```kotlin
 private val booksList = listOf(
-    Book(isbn = "", title = "Clean Code", nbPages = 0),
-    Book(isbn = "", title = "The Pragmatic Programmer", nbPages = 0),
-    // ... more books
+    Book(isbn = "978-0-13-235088-4", title = "Clean Code", nbPages = 464),
+    Book(isbn = "978-0-201-61622-4", title = "The Pragmatic Programmer", nbPages = 352),
+   Book(isbn = "978-0-13-110362-7", title = "The C Programming Language", nbPages = 272),
+   Book(isbn = "978-0-596-52068-7", title = "Head First Design Patterns", nbPages = 694),
+   Book(isbn = "978-1-491-94728-6", title = "Learning Python", nbPages = 1648)
 )
 ```
 
@@ -152,6 +154,7 @@ Book(
     title = "Clean Code",
     nbPages = 464
 )
+
 ```
 
 **ISBN Format:**

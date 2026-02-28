@@ -8,6 +8,7 @@ import com.ElOuedUniv.maktaba.data.model.Book
  */
 class BookRepository {
 
+
     /**
      * TODO for Students (TP1 - Exercise 1):
      * Complete the book information for each book in the list below.
@@ -23,11 +24,16 @@ class BookRepository {
      * )
      */
     private val booksList = listOf(
-        Book(isbn = "", title = "Clean Code", nbPages = 0),
-        Book(isbn = "", title = "The Pragmatic Programmer", nbPages = 0),
-        Book(isbn = "", title = "Design Patterns", nbPages = 0),
-        Book(isbn = "", title = "Refactoring", nbPages = 0),
-        Book(isbn = "", title = "Head First Design Patterns", nbPages = 0)
+        Book(isbn = "978-0-13-235088-4", title = "Clean Code", nbPages = 464),
+        Book(isbn = "978-0-201-61622-4", title = "The Pragmatic Programmer", nbPages = 352),
+        Book(isbn = "978-1-491-94728-6", title = "Design Patterns", nbPages = 1648),
+        Book(isbn = "978-0-321-35668-0", title = "Refactoring", nbPages = 448),
+        Book(isbn = "978-0-596-52068-7", title = "Head First Design Patterns", nbPages = 694),
+        Book(isbn = "978-0-262-03384-8", title = "Introduction to Algorithms", nbPages = 1312),
+        Book(isbn = "978-0-321-56384-2", title = "Effective Java", nbPages = 416),
+        Book(isbn = "978-1-491-92436-9", title = "Kotlin Programming: The Big Nerd Ranch Guide", nbPages = 528),
+        Book(isbn = "978-1-4493-6279-0", title = "Learning SQL", nbPages = 396),
+        Book(isbn = "978-1-491-94727-9", title = "Android Programming: The Big Nerd Ranch Guide", nbPages = 976)
     )
 
     /**
@@ -49,7 +55,9 @@ class BookRepository {
     fun getAllBooks(): List<Book> {
         return booksList
     }
-
+    fun getLongBooks(): List<Book> {
+        return booksList.filter { it.nbPages > 400 }
+    }
     /**
      * Get a book by ISBN
      * @param isbn The ISBN of the book to find
