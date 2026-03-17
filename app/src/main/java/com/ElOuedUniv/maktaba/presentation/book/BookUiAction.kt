@@ -7,8 +7,12 @@ import com.ElOuedUniv.maktaba.data.model.Book
  * TODO: Student must implement and use these actions in the ViewModel.
  */
 sealed interface BookUiAction {
-    object RefreshBooks : BookUiAction
-    object OnAddBookClick : BookUiAction
-    object OnDismissAddBook : BookUiAction
-    data class OnAddBookConfirm(val title: String, val isbn: String, val nbPages: Int) : BookUiAction
+
+    data object OnAddBookClick : BookUiAction
+
+    data object OnDismissAddBook : BookUiAction
+
+    data class OnAddBookConfirm(
+        val book: Book
+    ) : BookUiAction
 }
